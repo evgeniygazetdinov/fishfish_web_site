@@ -11,6 +11,7 @@
  const terser = require('gulp-terser');
  const imagemin = require('gulp-imagemin');
  let  fontmin = require('gulp-fontmin');
+ const less = require('gulp-less');
 
  var filesToMove = [
          './assets/build/**/*',
@@ -22,11 +23,7 @@
  let is_dev = true;
  let isProd = !is_dev;
 
-const cssFiles = [
-  './node_modules/normalize.css/normalize.css',
-    './assets/src/styles/body.css',
 
-];
 const jsFiles = [
   './assets/src/js/jquery-3.2.0.min.js',
   './assets/src/js/main.js'
@@ -36,7 +33,7 @@ const jsFiles = [
 
 function watch(){
 
-  gulp.watch('./assets/src/styles/**/*.css',styles);
+  gulp.watch('./assets/src/styles/**/*.less',styles);
   gulp.watch('./assets/src/js/**/*.js',script);
   gulp.watch('./assets/src/fonts/*',fonts);
   gulp.watch('./assets/src/img/*',img);
@@ -57,9 +54,9 @@ function fonts(){
         .pipe(gulp.dest('./assets/build/css/fonts'))
   }
  function styles(){
-   return gulp.src(cssFiles)
+   return gulp.src('./assets/src/css/styles.less')
                 .pipe(gulpif(is_dev,sourcemaps.init()))
-                .pipe(concat('style.css'))
+                .pipe(less())
 
                 .pipe(autoprefixer({
                      Browserslist :['> 0.01%'],
@@ -70,7 +67,6 @@ function fonts(){
                                   level:2}))
                 .pipe(gulpif(is_dev,sourcemaps.write('../maps')))
                  .pipe(gulp.dest('./assets/build/css'))
-                // .pipe(browserSync.stream())
 
 
   }
@@ -105,7 +101,6 @@ function fonts(){
      './assets/build/css/*',
      './assets/build/js/*',
      './assets/build/img/*',
-     './assets/build/css/*',
      './assets/build/css/*',
      './*.php'
    ]

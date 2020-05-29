@@ -14,7 +14,7 @@ add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 function theme_name_scripts() {
 
       wp_enqueue_script( 'fflanding-js', get_template_directory_uri() . '/assets/build/js/script.js');
-      wp_enqueue_style('second-child-theme', get_stylesheet_directory_uri() .'/assets/build/css/style.css');
+      wp_enqueue_style('second-child-theme', get_stylesheet_directory_uri() .'/assets/build/css/styles.css');
 
 };
 // =============================================================
