@@ -12,6 +12,19 @@
  const imagemin = require('gulp-imagemin');
  let  fontmin = require('gulp-fontmin');
  const less = require('gulp-less');
+ const smart_grid = require('smart-grid');
+ const path = require('path');
+ const gridOptPath = './smartgrid.js';
+
+
+
+ function grid(done){
+   delete require.cache[path.resolve(gridOptPath)];
+   let settings =require(gridOptPath);
+   smart_grid('./assets/src/css',settings);
+   done();
+ }
+
 
  var filesToMove = [
          './assets/build/**/*',
@@ -33,12 +46,14 @@ const jsFiles = [
 
 function watch(){
 
-  gulp.watch('./assets/src/styles/**/*.less',styles);
+  gulp.watch('./assets/src/css/**/*.less',styles);
   gulp.watch('./assets/src/js/**/*.js',script);
   gulp.watch('./assets/src/fonts/*',fonts);
   gulp.watch('./assets/src/img/*',img);
-  gulp.watch('./assets/src/').on('change',browserSync.reload);
+    gulp.watch(gridOptPath, grid);
+  gulp.watch('./*').on('change',browserSync.reload);
 
+  console.log('hi');
   }
 
 function img(){
@@ -101,19 +116,17 @@ function fonts(){
      './assets/build/css/*',
      './assets/build/js/*',
      './assets/build/img/*',
-     './assets/build/css/*',
      './*.php'
    ]
    browserSync.init(files,{
    proxy:'http://localhost/fishfish/',
  })
  })
-
+gulp.task('grid',grid);
 gulp.task('styles',styles);
 gulp.task('script',script);
 gulp.task('img',img);
 gulp.task('fonts',fonts);
-
 gulp.task('watch',watch);
 gulp.task('build', gulp.series(clear, gulp.parallel(styles, script,img,fonts)));
 gulp.task('default',gulp.series('build','browser-sync','watch'))

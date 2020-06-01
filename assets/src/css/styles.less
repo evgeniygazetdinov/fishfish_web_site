@@ -1,3 +1,29 @@
-.body{
-  background-color: red;
+@import "header.less";
+@import "body.less";
+@import "smart-grid.less";
+// @import "smart-grid.less";
+.reset();
+.main-container{
+  .wrapper();
+  margin-top: 90px;
 }
+// .degubGrid{
+//     .debug(rgba(0, 0, 0, 0.4), 1px solid #ff0);
+// }
+// fonts
+.basic-font(){
+@font-face { font-family: Manrope; src: url('fonts/manrope-regular.ttf'); }
+font-family: Manrope;
+font-style: normal;
+}
+.important-words(@color,@weight:600){
+.basic-font();
+color: @color;
+font-weight: @weight;
+font-size: 72px;
+line-height: 92.5%;
+text-transform: uppercase;
+}
+@yellow-color: #F6B155;
+@purple-color: #32395F;
+@pinky-color: #E99996;

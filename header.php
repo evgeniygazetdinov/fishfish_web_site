@@ -13,25 +13,48 @@ wp_enqueue_scripts();
 ?>
 
 </head>
-<header>
-							<ul class="main-table"><?php wp_nav_menu( [
-									'theme_location'  => '',
-									'menu'            => '',
-									'container'       => 'ul',
-									'container_class' => 'main-menu',
-									'container_id'    => '',
-									'menu_class'      => 'menu',
-									'menu_id'         => '',
-									'echo'            => true,
-									'fallback_cb'     => 'wp_page_menu',
-									'before'          => '',
-									'after'           => '',
-									'link_before'     => '',
-									'link_after'      => '',
-									'items_wrap'      => '<li class="menu-item ">%3$s</li>',
-									'depth'           => 0,
-									'walker'          => '',
-								] );; ?>
-							</ul>
-  
-</header>
+<div class="degubGrid">
+		<div>
+				<div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+				</div>
+		</div>
+</div>
+<div class="main-container">
+
+	<header>
+				<div class="header-place">
+							<p class="logo-title">
+								fish-fish
+							</p>
+					<div class="menu-burger-place">
+						<a href="#">=</a>
+					</div>
+			</div>
+
+
+
+	</header>

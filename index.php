@@ -1,7 +1,12 @@
 
  <?php get_header() ?>
- <div class="body-container">
-
+ <div class="first-title">
+   <div class="title-text">
+     <div class="first-line">
+         Делаем понятные <span class="impotant-place">сайты</span><br>
+     </div>
+      и говорим с тобой на простом языке
+   </div>
  </div>
     <!---
   <aside>
