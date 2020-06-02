@@ -14,7 +14,7 @@
         color: @purple-color;
         }
         span.impotant-place{
-          color: @pinky-color;
+          color: @pink-color;
         }
 
       }
@@ -25,20 +25,58 @@
   height: 614px;
   background-color: @blue-color;
   .left-place{
-      .left-text-spacing();
-    .col();
-    width: 40%;
-      p.who-text{
+    .left-place();
+  }
+      p.left-text{
         .basic-font();
         .middle-text();
 
         color:@white-color;
       }
    }
-   .rigth-place{
+   .right-place{
 
-     .col();
-     .right-text-spacing();
-     width: 50%;
-   }
+     .right-place();
+     .about-text{
+         .right-text-spacing();
+         .basic-font();
+         .tiny-text();
+         color:@white-color;
+     span.important-place{
+       color:@yellow-color;
+       }
+
+     }
+  }
+
+.what-we-do{
+  .row-flex();
+  height:401px;
+  .left-place{
+      width: 50%;
+      .left-place();
+      background-color: white;
+      .left-text{
+          .basic-font();
+          .middle-text();
+          color: @purple-color;
+      }
+  }
+  .right-place{
+      width:50%;
+      .right-place();
+      background-color:@pink-color;
+      .links{
+          .row-flex();
+          .col();
+          flex-direction: column;
+          a{
+              .basic-font();
+              .middle-tiny-text();
+              .size(4);
+              text-decoration: none;
+      }
+    }
+
+  }
 }
