@@ -13,6 +13,7 @@ wp_enqueue_scripts();
 ?>
 
 </head>
+
 <div class="degubGrid">
 		<div>
 				<div>

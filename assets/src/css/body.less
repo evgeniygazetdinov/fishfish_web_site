@@ -1,4 +1,8 @@
+
+
+
 .first-title{
+  height: 700px;
   .title-text{
      .first-line{
       .basic-font();
@@ -10,9 +14,69 @@
         color: @purple-color;
         }
         span.impotant-place{
-          color: @pinky-color;
+          color: @pink-color;
         }
 
       }
 
     }
+.we-are-fishfish{
+  .row-flex();
+  height: 614px;
+  background-color: @blue-color;
+  .left-place{
+    .left-place();
+  }
+      p.left-text{
+        .basic-font();
+        .middle-text();
+
+        color:@white-color;
+      }
+   }
+   .right-place{
+
+     .right-place();
+     .about-text{
+         .right-text-spacing();
+         .basic-font();
+         .tiny-text();
+         color:@white-color;
+     span.important-place{
+       color:@yellow-color;
+       }
+
+     }
+  }
+
+.what-we-do{
+  .row-flex();
+  height:401px;
+  .left-place{
+      width: 50%;
+      .left-place();
+      background-color: white;
+      .left-text{
+          .basic-font();
+          .middle-text();
+          color: @purple-color;
+      }
+  }
+  .right-place{
+      width:50%;
+      .right-place();
+      background-color:@pink-color;
+      .links{
+          .row-flex();
+          .col();
+          flex-direction: column;
+          a{
+              .basic-font();
+              .middle-tiny-text();
+              .size(4);
+              text-decoration: none;
+      }
+    }
+
+  }
+}
