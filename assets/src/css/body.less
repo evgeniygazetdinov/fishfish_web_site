@@ -20,63 +20,117 @@
       }
 
     }
-.we-are-fishfish{
-  .row-flex();
-  height: 614px;
-  background-color: @blue-color;
-  .left-place{
-    .left-place();
-  }
-      p.left-text{
-        .basic-font();
-        .middle-text();
+.who-is{
+    .full-screen();
+    .we-are-fishfish{
+      .row-flex();
+      flex-direction: column;
+      height: 614px;
+      background-color: @blue-color;
+        .left-place{
+          .left-place();
+          .inside-left-side();
+        }
+            p.left-text{
 
-        color:@white-color;
-      }
-   }
-   .right-place{
-
-     .right-place();
-     .about-text{
-         .right-text-spacing();
-         .basic-font();
-         .tiny-text();
-         color:@white-color;
-     span.important-place{
-       color:@yellow-color;
-       }
-
-     }
-  }
-
-.what-we-do{
-  .row-flex();
-  height:401px;
-  .left-place{
-      width: 50%;
-      .left-place();
-      background-color: white;
-      .left-text{
-          .basic-font();
-          .middle-text();
-          color: @purple-color;
-      }
-  }
-  .right-place{
-      width:50%;
-      .right-place();
-      background-color:@pink-color;
-      .links{
-          .row-flex();
-          .col();
-          flex-direction: column;
-          a{
               .basic-font();
-              .middle-tiny-text();
-              .size(4);
-              text-decoration: none;
-      }
-    }
+              .middle-text();
 
-  }
+              color:@white-color;
+            }
+         }
+         .right-place{
+          .inside-right-side();
+           .right-place();
+           .about-text{
+
+               .right-text-spacing();
+               .basic-font();
+               .tiny-text();
+               color:@white-color;
+           span.important-place{
+             color:@yellow-color;
+             }
+
+           }
+        }
 }
+.what-we-do{
+
+  .row-flex();
+.full-screen-left();
+  height: 401px;
+  flex-direction: row;
+  
+    .left-place{
+        .left-place();
+        .inside-left-side();
+        background-color: white;
+        .left-text{
+
+            .basic-font();
+            .middle-text();
+            color: @purple-color;
+        }
+    }
+    .right-place{
+        .right-place();
+        .row-flex();
+        .inside-right-side();
+        padding-left: 65px;
+        background-color:@pink-color;
+        .links{
+            .row-flex();
+            flex-direction: column;
+            a{
+                .basic-font();
+                .middle-tiny-text();
+
+                color: white;
+                text-decoration: none;
+        }
+      }
+
+    }
+}
+.cases{
+  height:857px;
+  background-color:@green-color;
+  .full-screen();
+}
+.prices{
+  .row-flex();
+  .full-screen();
+  height:401px;
+    .left-place{
+        width: 50%;
+        .left-place();
+        background-color: @pink-color;
+        .left-text{
+            .inside-left-side();
+            .basic-font();
+            .middle-text();
+            color: white;
+        }
+    }
+    .right-place{
+        width:50%;
+        .right-place();
+        .row-flex();
+        background-color:white;
+        .links{
+            .inside-right-side();
+            .size(4);
+
+            flex-direction: column;
+            a{
+                .basic-font();
+                .middle-tiny-text();
+
+                color:@blue-color;
+                text-decoration: none;
+        }
+      }
+
+    }
+  }
