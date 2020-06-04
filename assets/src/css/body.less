@@ -35,7 +35,7 @@
 
               .basic-font();
               .middle-text();
-
+              padding-left: 165px;
               color:@white-color;
             }
          }
@@ -61,7 +61,7 @@
 .full-screen-left();
   height: 401px;
   flex-direction: row;
-  
+
     .left-place{
         .left-place();
         .inside-left-side();
@@ -85,7 +85,7 @@
             a{
                 .basic-font();
                 .middle-tiny-text();
-
+                padding-bottom: 40px;
                 color: white;
                 text-decoration: none;
         }
@@ -94,9 +94,21 @@
     }
 }
 .cases{
+  .row-flex();
   height:857px;
   background-color:@green-color;
   .full-screen();
+  flex-direction: column;
+      .left-place{
+        .left-place();
+        .inside-left-side();
+        width:50%;
+      }
+      .right-place{
+        .inside-right-side();
+         .right-place();
+        width:50%;
+      }
 }
 .prices{
   .row-flex();
@@ -133,4 +145,33 @@
       }
 
     }
+  }
+  .fishfish-logo p{
+      .important-words(@yellow-color);
+      .size-md(3);
+  }
+  .contact-info{
+    .row-flex();
+    .social-links a{
+      .basic-font();
+      .middle-tiny-text();
+      color: @pink-color;
+      text-decoration: none;
+    }
+
+  }
+
+  tbody{
+    display:flex;
+  }
+  table tr{
+    display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  }
+  tr.left-side,tr.right-side{
+    align-items: start;
+    .basic-font();
+    .middle-tiny-text();
   }
