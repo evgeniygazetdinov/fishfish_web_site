@@ -11,9 +11,6 @@
    						<a href="#">=</a>
    					</div>
    			</div>
-
-
-
    	</header>
 
    <div class="title-text">
@@ -53,6 +50,7 @@
       </div>
    </div>
  </div>
+
  <div class="cases">
    <div class="left-place">
        <div class="left-place">
@@ -85,7 +83,6 @@
        </div>
    </div>
  </div>
- <!---
 <div class="proposal-form">
   <aside>
     <p>Оставь нам заявку</p>
@@ -108,6 +105,4 @@
         </form>
   </aside>
 </div>
-
---->
  <?php get_footer() ?>
