@@ -1,5 +1,6 @@
 @import "header.less";
 @import "body.less";
+@import "footer.less";
 @import "smart-grid.less";
 // @import "smart-grid.less";
 .reset();
@@ -7,9 +8,9 @@
   .wrapper();
   margin-top: 90px;
 }
-// .degubGrid{
-//     .debug(rgba(0, 0, 0, 0.4), 1px solid #ff0);
-// }
+.degubGrid{
+    .debug(rgba(0, 0, 0, 0.4), 1px solid #ff0);
+}
 .basic-font(){
 @font-face { font-family: Manrope; src: url('fonts/manrope-regular.ttf'); }
 font-family: Manrope;
@@ -42,11 +43,9 @@ text-transform: uppercase;
 }
 .left-place(){
   .col();
-  width: 50%;
 }
 .right-place(){
   .col();
-  width: 40%;
 }
 .half-display-left-place{
 
