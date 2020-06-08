@@ -44,16 +44,27 @@ const jsFiles = [
 ];
 
 
-function watch(){
+function watch(done){
+  let files = [
+    './assets/src/css/*',
+    './assets/src/js/*',
+    './assets/src/img/*',
+    './*.php'
+  ];
+  browserSync.init(files,{
+ injectChanges: false,
 
-  gulp.watch('./assets/src/css/**/*.less',styles);
-  gulp.watch('./assets/src/js/**/*.js',script);
+  proxy:'http://localhost/fishfish/',
+
+});
+
+  gulp.watch('./assets/src/css/**/*.less',gulp.series(styles,reload));
+  gulp.watch('./assets/src/js/**/*.js',gulp.series(script,reload));
   gulp.watch('./assets/src/fonts/*',fonts);
   gulp.watch('./assets/src/img/*',img);
-    gulp.watch(gridOptPath, grid);
-  gulp.watch('./*').on('change',browserSync.reload);
-
-  console.log('hi');
+  gulp.watch(gridOptPath, grid);
+  gulp.watch('./*', reload);
+  browserSync.watch('./*').on('change', browserSync.reload);
   }
 
 function img(){
@@ -68,7 +79,7 @@ function fonts(){
         // .pipe(fontmin())
         .pipe(gulp.dest('./assets/build/css/fonts'))
   }
- function styles(){
+ function styles(done){
    return gulp.src('./assets/src/css/styles.less')
                 .pipe(gulpif(is_dev,sourcemaps.init()))
                 .pipe(less())
@@ -83,15 +94,20 @@ function fonts(){
                 .pipe(gulpif(is_dev,sourcemaps.write('../maps')))
                  .pipe(gulp.dest('./assets/build/css'))
 
+                   .pipe(browserSync.stream())
+
+
 
   }
- function script(){
+ function script(done){
    return gulp.src(jsFiles)
 
                 .pipe(concat('script.js'))
                 // .pipe(uglify({toplevel:true}))
                 .pipe(terser())
                 .pipe(gulp.dest('./assets/build/js'))
+                 .pipe(browserSync.stream());
+                done();
 
  }
 
@@ -109,24 +125,21 @@ function fonts(){
     done();};
 
 
+  function reload(done) {
+    browserSync.reload();
+    console.log('reloaded');
+    done();
+  }
 
 
- gulp.task('browser-sync',function(){
-   let files = [
-     './assets/build/css/*',
-     './assets/build/js/*',
-     './assets/build/img/*',
-     './*.php'
-   ]
-   browserSync.init(files,{
-   proxy:'http://localhost/fishfish/',
- })
- })
 gulp.task('grid',grid);
 gulp.task('styles',styles);
 gulp.task('script',script);
 gulp.task('img',img);
 gulp.task('fonts',fonts);
 gulp.task('watch',watch);
+gulp.task('reload',reload)
+gulp.task('watch2',gulp.series('watch'))
 gulp.task('build', gulp.series(clear, gulp.parallel(styles, script,img,fonts)));
-gulp.task('default',gulp.series('build','browser-sync','watch'))
+gulp.task('watch2',gulp.series('build','watch'))
+gulp.task('default',gulp.series('build','watch'))

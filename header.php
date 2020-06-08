@@ -45,17 +45,3 @@ wp_enqueue_scripts();
 		</div>
 </div>
 <div class="main-container">
-
-	<header>
-				<div class="header-place">
-							<p class="logo-title">
-								fish-fish
-							</p>
-					<div class="menu-burger-place">
-						<a href="#">=</a>
-					</div>
-			</div>
-
-
-
-	</header>

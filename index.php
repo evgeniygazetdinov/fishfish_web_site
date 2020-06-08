@@ -1,6 +1,18 @@
 
  <?php get_header() ?>
  <div class="first-title">
+
+   	<header>
+   				<div class="header-place">
+   							<p class="logo-title">
+   								fish-fish
+   							</p>
+   					<div class="menu-burger-place">
+   						<a href="#">=</a>
+   					</div>
+   			</div>
+   	</header>
+
    <div class="title-text">
      <div class="first-line">
          Делаем понятные <span class="impotant-place">сайты</span><br>
@@ -38,7 +50,7 @@
       </div>
    </div>
  </div>
- <!---
+
  <div class="cases">
    <div class="left-place">
        <div class="left-place">
@@ -93,6 +105,4 @@
         </form>
   </aside>
 </div>
-
---->
  <?php get_footer() ?>
