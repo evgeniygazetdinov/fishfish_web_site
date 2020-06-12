@@ -105,8 +105,10 @@
   height:857px;
   background-color:@green-color;
   .full-screen();
-  flex-direction: column;
+  flex-direction: row;
       .left-place{
+        .col();
+        .size(6);
         .left-place();
 
         .inside-left-side();
@@ -115,19 +117,95 @@
           .middle-text();
           padding-left: 165px;
           color:@white-color;
-          .col();
-          .size(6);
+          width: 100%;
         }
       }
       .right-place{
-        .row-flex();
-        .inside-right-side();
-         .right-place();
-         .cases-place{
-         .col();
-         .size(5);
+        .col();
+        .size(6);
+        .right-place();
       }
+
 }
+
+.proposal-form{
+
+  height: 818px;
+  .row-flex();
+  .full-screen();
+  background-color: @blue-color;
+  padding-left: 165px;
+  p.first-line{
+    margin-top: 80px;
+    .basic-font();
+    .middle-tiny-text();
+
+    color:@white-color;
+    margin-bottom: 50px;
+  }
+  .center-page, .bottom{
+    display: flex;
+
+  }
+  .bottom{
+    flex-direction: row;
+    width: 100%;
+  }
+  .bottom p{
+    .col();
+    .size(3);
+    margin-left: 0;
+  }
+  .email-chain{
+    width: 100%;
+    flex-direction: column;
+  };
+  .email-chain, .name-chain, .phone-chain{
+
+  }
+  .name-chain p,.email-chain p ,.phone-chain p{
+    .basic-font();
+    .middle-text();
+    color:@white-color;
+  }
+  .name-chain input,.email-chain input,.phone-chain input,{
+  border: none;
+    outline: none;
+    outline-style: none;
+  background-color: inherit;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #eeeeee 1px;
+  color:@yellow-color;
+  margin-top: -15px;
+  .basic-font();
+  .middle-text();
+  }
+  .name-chain input{
+    .col();
+    .size(3);
+    flex-direction: row;
+  }
+  .email-chain input{
+    .col();
+    .size(6);
+  }
+  .phone-chain input{
+    .col();
+    .size(5)
+  }
+  input.ff-btn-app{
+    margin-top: 80px;
+  .col();
+  .size(5);
+  .basic-font();
+  .middle-tiny-text();
+  height: 99px;
+  border: none;
+  background-color: @yellow-color;
+  color:@blue-color;
+  }
 }
 // .prices{
 //   .row-flex();

@@ -85,19 +85,23 @@
  </div>
 <div class="proposal-form">
   <aside>
-    <p>Оставь нам заявку</p>
+    <p class="first-line">Оставь нам заявку</p>
       <form action="">
           <input type="hidden">
 
-          <div class="name-chain">
+          <div class="name-chain center-page">
               <p>Mеня зовут </p>
               <input type="text" name="name">
           </div>
-          <div class="email-chain">
-              <p>Вы можете связаться со мной по почте </p>
-              <input type="text" name="email">
+          <div class="email-chain center-page">
+              <p>Вы можете связаться со мной </p>
+              <div class="bottom">
+                <p>по почте </p>
+                <input type="text" name="email">
+              </div>
+
           </div>
-          <div class="phone-chain">
+          <div class="phone-chain center-page">
               <p>и по номеру</p>
               <input type="text" name="phone">
           </div>
